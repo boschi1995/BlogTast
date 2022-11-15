@@ -1,0 +1,71 @@
+.topMenu 
+{    
+    display: inline-flex;
+    line-height: 100px;
+    
+    background-color: #ced4da;
+    width: 100%; 
+    height: 100px;
+
+    color: #343a40;
+    font-size: 40px;
+    font-weight: 1000;
+    text-align: left;
+}  
+
+.topButton 
+{
+    display: inline-flex;
+    line-height: 30px;
+    
+    background-color: #495057;
+    width: 100px; 
+    height: 30px;
+
+    color: #f1f3f5;
+    font-size: 20px;
+    font-weight: 1000;
+    text-align: center;
+}  
+
+.topButtonOut 
+{
+    display: inline-flexbox;
+    line-height: 10px;
+    
+    background-color: #495057;
+    width: 100%; 
+    height: 30px;
+} 
+
+.postingTilte
+{
+    resize:none;
+    width: 255px;
+    height: 20px;
+}
+
+.postingText
+{
+    white-space: pre-wrap;
+    resize:none;
+    width: 300px;
+    height: 350px;
+}
+
+.postingButton
+{
+    resize:none;
+    width: 307px;
+    height: 30px;
+}
+
+.forumInput
+{
+    display: inline-flexbox;
+    resize:none;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+}
+

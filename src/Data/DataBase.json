@@ -1,0 +1,6 @@
+{
+   "PageList" : [ ["forum", "메인 화면"], ["posting", "글 작성"], ["Post", "글 확인"] ],
+   "PostState" : 0,
+   "PostList" : [ ]
+   
+}
