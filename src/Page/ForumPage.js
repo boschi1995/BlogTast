@@ -32,40 +32,62 @@ function ForumPage()
 
     const setLook = look.map((item,index) => 
         <div key={index}>
-            <button onClick={(e)=> {postDelete(item,e)}}>삭제</button>
-            <Link to = {`/${DB.PageList[2][0]}/${hook}/${item}` }> 
-                :: {`${DB.PostList[item].Day}`}
-                :: {`${DB.PostList[item].Title}`}
+            <Link to = {`/${DB.PageList[2][0]}/${hook}/${item}` } style={ { textDecoration: "none", color: "black" }}> 
+                <div className="postList_Line">
+                    <button className="postList_Button" onClick={(e)=> {postDelete(item,e)}}>삭제</button>
+                    <button className="postList_Button"> 따봉</button>
+
+                    :: {`${DB.PostList[item].Day}`}
+                    :: {`${DB.PostList[item].Title}`}
+                </div>
             </Link>
         </div>
     );
 
     return(
-        <div>
-            {setLook}
-            
-            <div>
+        <div style={{ marginLeft: 3 }}>
 
-            { 
-                hook-1 < 0 ?( <button>이전</button> ) 
-                :(  
-                    <Link to={`${hook-1}`}>
-                        <button>이전</button>
-                    </Link>
-                )    
-            }
+            <div className="postList_OptionBox">
+                
+                <select className="postList_Select" tyle = {{ width: "10px"   }}>
+                    <option value="Tilte">카테고리</option>
+                    <option value="Day">랜덤</option>
+                </select>
 
-            <input className="forumInput" placeholder={hook} />
-            {
-                ((hook+1)*5) >= DB.PostList.length?( <button>이후</button> ) 
-                :(  
-                    <Link to={`${hook+1}`}>
-                        <button>이후</button>
-                    </Link>
-                )    
-            }
+                <input className="postList_Button" placeholder= "미구현" style = {{ height: "19px", width: "30%" } } />
+                <select className="postList_Button">
+                    <option value="Tilte">제목</option>
+                    <option value="Day">날짜</option>
+                </select>
 
             </div>
+
+            <div className="postList_Box">{setLook}</div>
+
+            <div className="postList_OptionBox">
+
+                { 
+                    hook-1 < 0 ?( <button className="postList_Button">이전</button> ) 
+                    :(  
+                        <Link to={`${hook-1}`}>
+                            <button className="postList_Button">이전</button>
+                        </Link>
+                    )    
+                }
+
+                <input className="postList_Button" placeholder={hook} style = {{ height: "19px", textAlign: "center"} } />
+
+                {
+                    ((hook+1)*5) >= DB.PostList.length?( <button className="postList_Button">이후</button> ) 
+                    :(  
+                        <Link to={`${hook+1}`}>
+                            <button className="postList_Button">이후</button>
+                        </Link>
+                    )    
+                }
+
+            </div>
+
         </div>
     );
 }
